@@ -50,38 +50,46 @@ style="background-color: #000000;">
     <button class="btn btn-light" (click)="navbar1 = !navbar1; dell=true;
     navbar2 = !navbar2; toggle1 = !toggle1; toggle2 = !toggle2" style="border-radius: 50%;"><i class="fas fa-arrow-circle-left"></i></button>
 </nav>
+
+
 <div *ngIf="toggle1" ([ngModel])='toggle1' ([ngModel])='toggle2' ([ngModel])='app1' ([ngModel])='app2' ([ngModel])='app3' ([ngModel])='app4' ng-controller="testController">
     <div class="container">
-        <div class="row"><br></div>
-        <div class="row" style=" height: 23rem; border : 1px black solid">
+        <div class="row"><br></div><div class="row"><br></div>
+        <div class="row" style=" height: 20rem;">
             <div class="col-3" >
                 <button class="btn btn-dark" (click)="toggle1 = !toggle1; toggle2 = !toggle2; app1=true; app2=false; app3=false; app4=false; navbar2=true; navbar1=false;dell=false;">
                     <a class="link" src="">
-                        <img class ="image" src="assets/app1.PNG" style="max-width: 100%; height: 19rem;display: block;">
+                        <img class ="image" src="assets/a1.png" style="max-width: 100%; height: 19rem;display: block;">
                     </a>
                 </button>
             </div>
             <div class="col-3" >
                 <button class="btn btn-dark" (click)="toggle1 = !toggle1; toggle2 = !toggle2; app1=false; app2=true; app3=false; app4=false; navbar2=true; navbar1=false;dell=false;">
                     <a class="link">
-                        <img class ="image-special" src="assets/app2.PNG" style="max-width: 100%;height: 19rem; display: block;">
+                        <img class ="image-special" src="assets/a2.png" style="max-width: 100%;height: 19rem; display: block;">
                     </a>
                 </button>
             </div>
             <div class="col-3" >
                 <button class="btn btn-dark" (click)="toggle1 = !toggle1; toggle2 = !toggle2; app1=false; app2=false; app3=true; app4=false; navbar2=true; navbar1=false;dell=false;">
                     <a class="link" src="">
-                        <img class ="image" src="assets/app3.PNG" style="max-width: 100%;height: 19rem;display: block;">
+                        <img class ="image" src="assets/a3.png" style="max-width: 100%;height: 19rem;display: block;">
                     </a>
                 </button>
             </div>
             <div class="col-3" >
                 <button class="btn btn-dark" (click)="toggle1 = !toggle1; toggle2 = !toggle2 ; app1=false; app2=false; app3=false; app4=true; navbar2=true; navbar1=false;dell=false;">
                     <a class="link" src="">
-                        <img class ="image" src="assets/app4.PNG" style="max-width: 100%;height: 19rem;display: block;">
+                        <img class ="image" src="assets/a4.png" style="max-width: 100%;height: 19rem;display: block;">
                     </a>
                 </button>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-3 text-white" style="text-align: center;"><h5>{{linkdata[0].title}}</h5></div>
+            <div class="col-3 text-white" style="text-align: center;"><h5>{{linkdata[1].title}}</h5></div>
+            <div class="col-3 text-white" style="text-align: center;"><h5>{{linkdata[2].title}}</h5></div>
+            <div class="col-3 text-white" style="text-align: center;"><h5>{{linkdata[3].title}}</h5></div>
         </div>
         <br>
     </div>
@@ -95,10 +103,10 @@ style="background-color: #000000;">
 
 <div *ngIf="toggle2" style="border:none;">
     <div style="height:1000px; width:100%; border : 2px solid white;">
-        <iframe *ngIf="app1" src="https://www.dell.com/en-in" height="1000px" width="100%"></iframe>
-        <iframe *ngIf="app2" src="https://en.wikipedia.org/wiki/Dell_Technologies" height="1000px" width="100%"></iframe>
-        <iframe *ngIf="app3" src="https://www.dell.com/learn/in/en/inslg1/safety-emc-products" height="1000px" width="100%"></iframe>
-        <iframe *ngIf="app4" src="https://www.delltechnologies.com/en-in/index.htm" height="1000px" width="100%"></iframe>
+        <iframe *ngIf="app1" [src]="linkdata[0].url | safe: 'resourceUrl'" height="1000px" width="100%"></iframe>
+        <iframe *ngIf="app2" [src]="linkdata[1].url | safe: 'resourceUrl'" height="1000px" width="100%"></iframe>
+        <iframe *ngIf="app3" [src]="linkdata[2].url | safe: 'resourceUrl'" height="1000px" width="100%"></iframe>
+        <iframe *ngIf="app4" [src]="linkdata[3].url | safe: 'resourceUrl'" height="1000px" width="100%"></iframe>
     </div>
 </div>
 

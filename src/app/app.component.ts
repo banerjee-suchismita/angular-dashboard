@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { LinksService } from './links-data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,8 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-dashboard';
 
+  constructor(private linksService : LinksService){}
+
+  title = 'angular-dashboard';
+  linkdata = [];
   toggle1 = true;
   toggle2 = false;
   app1 = false;
@@ -17,12 +21,15 @@ export class AppComponent {
   navbar1 = true;
   navbar2 = false;
   dell = true;
-  // Toggle(){
-  //   this.toggle1 = !this.toggle1;
-  //   this.toggle2 = !this.toggle2;
-  //   console.log("I am here?")
-  // }
+  var : String = 'HI';
+ 
+  ngOnInit(){
+    this.fetchData();
+  }
 
-
+  fetchData() {
+    this.linksService.fetchData().subscribe(data => this.linkdata = data);
+    console.log(this.linkdata)
+  }
   
 }
