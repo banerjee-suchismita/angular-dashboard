@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { LinksService } from './links-data.service';
 
 @Component({
@@ -31,5 +31,10 @@ export class AppComponent {
     this.linksService.fetchData().subscribe(data => this.linkdata = data);
     console.log(this.linkdata)
   }
+
+  // wrapperWhite() {
+  //   console.log("HI")
+  //   @ViewChild("wrapper").style.backgroundColor="white";
+  // }
   
 }
