@@ -1,18 +1,18 @@
 [
 	{
-		"title" : "Dell 1",
-		"url" : "https://www.dell.com/en-in"
+		"title" : "Hublite",
+		"url" : "https://hublite-dev-pa.us.dell.com/#/homepage"
 	},
 	{
-		"title" : "Dell 2",
-		"url" : "https://www.w3schools.com/js/js_json_arrays.asp"
+		"title" : "Vishnu’s GIT tool",
+		"url" : "https://global-transfer-tool-ui.ausmsc01.pcf.dell.com/"
 	},
 	{
-		"title" : "Dell 3",
-		"url" : "https://stackoverflow.com/questions/29612800/load-json-from-github-file"
+		"title" : "Prism dashboard",
+		"url" : "https://logging-dashboard-ui.ausmsc01.pcf.dell.com/interface"
 	},
 	{
-		"title" : "Dell 4",
-		"url" : "https://gadgets.ndtv.com/laptops/dell-laptops"
+		"title" : "Dell Leadership",
+		"url" : "https://corporate.delltechnologies.com/en-us/about-us/leadership.htm"
 	}
 ]
