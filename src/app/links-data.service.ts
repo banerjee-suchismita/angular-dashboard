@@ -9,7 +9,7 @@ export class LinksService {
     constructor(private http: HttpClient ){}
 
     fetchData() : Observable <Links[]>{
-        return this.http.get<Links[]>('https://raw.githubusercontent.com/banerjee-suchismita/demo-data/master/json-data.json');
+        return this.http.get<Links[]>('https://raw.githubusercontent.com/banerjee-suchismita/angular-dashboard/master/data.json');
     }
 
 }
